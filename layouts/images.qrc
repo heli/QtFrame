@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/icon_window_close.png</file>
+        <file>images/icon_window_maximize.png</file>
+        <file>images/icon_window_minimize.png</file>
+        <file>images/icon_window_restore.png</file>
+        <file>images/fullscreen.png</file>
+        <file>images/fullscreen_exit.png</file>
+        <file>images/window.ico</file>
+        <file>images/filter.png</file>
+        <file>images/sort_down.png</file>
+        <file>images/sort_up.png</file>
+        <file>images/qt_zh_CN.qm</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/img"/>
+    <qresource prefix="/">
+        <file>resouce.qrc</file>
+        <file>font/iconfont.ttf</file>
+        <file>img/icon/camera_web.png</file>
+        <file>img/icon/device.png</file>
+        <file>img/icon/person.png</file>
+        <file>img/icon/refresh.png</file>
+        <file>img/icon/setting.png</file>
+        <file>img/white_bg.png</file>
+        <file>img/bg-header.png</file>
+        <file>img/logo.png</file>
+        <file>img/icon/folder_movies.png</file>
+        <file>img/icon/reel_with_film.png</file>
+        <file>img/icon/movie.png</file>
+        <file>img/icon/home_w.png</file>
+        <file>img/icon/video_display.png</file>
+        <file>img/icon/home.png</file>
+        <file>img/icon/settings.png</file>
+    </qresource>
+</RCC>
