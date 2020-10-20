@@ -87,13 +87,13 @@
   <customwidget>
    <class>NavbarLeftWidget</class>
    <extends>QWidget</extends>
-   <header location="global">template/navbarleftwidget.h</header>
+   <header location="global">layouts/navbarleftwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>NavTreeLeftWidget</class>
    <extends>QWidget</extends>
-   <header location="global">template/navtreeleftwidget.h</header>
+   <header location="global">layouts/navtreeleftwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
