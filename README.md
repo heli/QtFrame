@@ -3,7 +3,6 @@ A Basic Framework Of Qt. Include Frameless, Qss
 
 
 ## Features
-
 1. 自定义窗口
 2. 左侧树型菜单
 3. 通过Qss重新定义了Qt控件的显示样式
