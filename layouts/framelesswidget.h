@@ -13,8 +13,6 @@ namespace Ui {
 class FramelessWidget;
 }
 
-// TODO: 完成Demo示例，尽可能多的添加控件的样式
-
 class FramelessWidget : public QWidget
 {
     Q_OBJECT
