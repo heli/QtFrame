@@ -9,8 +9,14 @@ A Basic Framework Of Qt. Include Frameless, Qss
 
 ![image](https://www.miw-tech.com/image/show?path=images/qtframe/main.png)
 
-## Others
+## About
+业务咨询：029-81025100 或 15398089175
+地址：西安市雁塔区唐延南路
+电邮：heli@miw-tech.com
+主页：http://www.miw-tech.com
 
-我要捐赠
+## Donate
+
+捐赠
 
 ![image](https://www.miw-tech.com/image/show?path=images/qtframe/wxqrcode2.jpg)![image](https://www.miw-tech.com/image/show?path=images/qtframe/aliqrcode2.jpg)
