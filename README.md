@@ -13,5 +13,5 @@ A Basic Framework Of Qt. Include Frameless, Qss
 
 我要捐赠
 
-![image](https://www.miw-tech.com/image/show?path=images/qtframe/wxqrcode.jpg)
-![image](https://www.miw-tech.com/image/show?path=images/qtframe/aliqrcode.jpg)
+![image](https://www.miw-tech.com/image/show?path=images/qtframe/wxqrcode2.jpg)       
+![image](https://www.miw-tech.com/image/show?path=images/qtframe/aliqrcode2.jpg)
