@@ -224,7 +224,7 @@
              <item>
               <widget class="QPushButton" name="navBtn1">
                <property name="text">
-                <string>实时监控</string>
+                <string>首页</string>
                </property>
                <property name="icon">
                 <iconset resource="../resource/resouce.qrc">
@@ -244,7 +244,7 @@
              <item>
               <widget class="QPushButton" name="navBtn2">
                <property name="text">
-                <string>本地播放</string>
+                <string>页面1</string>
                </property>
                <property name="icon">
                 <iconset resource="../resource/resouce.qrc">
@@ -261,7 +261,7 @@
              <item>
               <widget class="QPushButton" name="navBtn3">
                <property name="text">
-                <string>历史回放</string>
+                <string>页面2</string>
                </property>
                <property name="icon">
                 <iconset resource="../resource/resouce.qrc">
@@ -278,7 +278,7 @@
              <item>
               <widget class="QPushButton" name="navBtn4">
                <property name="text">
-                <string>监控管理</string>
+                <string>页面3</string>
                </property>
                <property name="icon">
                 <iconset resource="../resource/resouce.qrc">
@@ -295,7 +295,7 @@
              <item>
               <widget class="QPushButton" name="navBtn5">
                <property name="text">
-                <string>设备管理</string>
+                <string>系统设置</string>
                </property>
                <property name="icon">
                 <iconset resource="../resource/resouce.qrc">
@@ -335,6 +335,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
+  <include location="../resource/resouce.qrc"/>
   <include location="../resource/resouce.qrc"/>
   <include location="../resource/resouce.qrc"/>
  </resources>

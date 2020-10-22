@@ -37,9 +37,9 @@ FramelessWidget::FramelessWidget(QWidget *parent) :
 //    textShadow->setColor(QColor(100, 100, 0));
 //    textShadow->setOffset(0.0);
 //    ui->labSysTitle->setGraphicsEffect(textShadow);
-    ui->labSysTitle->setText("安全视频监控系统1.0");
+    ui->labSysTitle->setText("QtFrame 1.0");
     this->styleWindow(true, true);
-    QWidget::setWindowTitle(tr("安全视频监控系统1.0"));
+    QWidget::setWindowTitle(tr("QtFrame1.0"));
 
     QObject::connect(qApp, &QGuiApplication::applicationStateChanged, this,
                      &FramelessWidget::on_applicationStateChanged);
