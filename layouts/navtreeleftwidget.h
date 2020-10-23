@@ -2,6 +2,7 @@
 #define NAVTREELEFTWIDGET_H
 
 #include <QWidget>
+#include <QTreeWidgetItem>
 
 namespace Ui {
 class NavTreeLeftWidget;
@@ -14,6 +15,11 @@ class NavTreeLeftWidget : public QWidget
 public:
     explicit NavTreeLeftWidget(QWidget *parent = nullptr);
     ~NavTreeLeftWidget();
+
+private slots:
+    void initForm();
+
+    void on_navTreeWidget_itemClicked(QTreeWidgetItem *item, int column);
 
 private:
     Ui::NavTreeLeftWidget *ui;
