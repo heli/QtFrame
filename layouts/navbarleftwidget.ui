@@ -75,7 +75,10 @@
           <item row="0" column="0">
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
-             <widget class="QToolButton" name="toolButton">
+             <widget class="QToolButton" name="toolbarButton">
+              <property name="styleSheet">
+               <string notr="true">font-size: 17px;</string>
+              </property>
               <property name="text">
                <string>功能菜单</string>
               </property>
@@ -195,6 +198,7 @@
   </layout>
  </widget>
  <resources>
+  <include location="../resource/resouce.qrc"/>
   <include location="../resource/resouce.qrc"/>
   <include location="../resource/resouce.qrc"/>
  </resources>
