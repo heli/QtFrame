@@ -75,7 +75,7 @@
           <item row="1" column="0">
            <widget class="QTreeWidget" name="navTreeWidget">
             <property name="styleSheet">
-             <string notr="true">QTreeWidget::item{
+             <string notr="true">#navTreeWidget::item{
 	margin-bottom: 0px;
 	padding-left: 15px;
 	font-size:40px;
