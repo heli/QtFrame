@@ -18,5 +18,7 @@
         <file>img/icon/video_display.png</file>
         <file>img/icon/home.png</file>
         <file>img/icon/settings.png</file>
+        <file>img/icon/folder_closed.png</file>
+        <file>img/icon/folder_opened.png</file>
     </qresource>
 </RCC>

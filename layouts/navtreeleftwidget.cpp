@@ -21,8 +21,8 @@ void NavTreeLeftWidget::initForm()
 {
 
     QIcon icon1;
-    icon1.addPixmap(QPixmap(":img/icon/camera_web.png"), QIcon::Selected);
-    icon1.addPixmap(QPixmap(":img/icon/camera_web.png"), QIcon::Normal);
+    icon1.addPixmap(QPixmap(":img/icon/folder_opened.png"), QIcon::Selected);
+    icon1.addPixmap(QPixmap(":img/icon/folder_closed.png"), QIcon::Normal);
     ui->navTreeWidget->setRootIsDecorated(false);
 
     QTreeWidgetItem *rootItem;
