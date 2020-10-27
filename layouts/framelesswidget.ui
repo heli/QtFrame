@@ -228,7 +228,7 @@
                </property>
                <property name="icon">
                 <iconset resource="../resource/resouce.qrc">
-                 <normaloff>:/img/icon/camera_web.png</normaloff>:/img/icon/camera_web.png</iconset>
+                 <normaloff>:/img/icon/home.png</normaloff>:/img/icon/home.png</iconset>
                </property>
                <property name="checkable">
                 <bool>true</bool>
@@ -248,7 +248,7 @@
                </property>
                <property name="icon">
                 <iconset resource="../resource/resouce.qrc">
-                 <normaloff>:/img/icon/folder_movies.png</normaloff>:/img/icon/folder_movies.png</iconset>
+                 <normaloff>:/img/icon/folder_video.png</normaloff>:/img/icon/folder_video.png</iconset>
                </property>
                <property name="checkable">
                 <bool>true</bool>
@@ -282,7 +282,7 @@
                </property>
                <property name="icon">
                 <iconset resource="../resource/resouce.qrc">
-                 <normaloff>:/img/icon/video_display.png</normaloff>:/img/icon/video_display.png</iconset>
+                 <normaloff>:/img/icon/my_computer.png</normaloff>:/img/icon/my_computer.png</iconset>
                </property>
                <property name="checkable">
                 <bool>true</bool>
@@ -335,7 +335,6 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../resource/resouce.qrc"/>
   <include location="../resource/resouce.qrc"/>
   <include location="../resource/resouce.qrc"/>
  </resources>

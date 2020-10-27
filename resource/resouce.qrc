@@ -11,7 +11,6 @@
         <file>img/white_bg.png</file>
         <file>img/bg-header.png</file>
         <file>img/logo.png</file>
-        <file>img/icon/folder_movies.png</file>
         <file>img/icon/reel_with_film.png</file>
         <file>img/icon/movie.png</file>
         <file>img/icon/home_w.png</file>
@@ -20,5 +19,11 @@
         <file>img/icon/settings.png</file>
         <file>img/icon/folder_closed.png</file>
         <file>img/icon/folder_opened.png</file>
+        <file>img/icon/folder_video.png</file>
+        <file>img/icon/my_computer.png</file>
+        <file>img/icon/prorgrams.png</file>
+        <file>img/icon/systemconfiguration.png</file>
+        <file>img/icon/network_drive_offline.png</file>
+        <file>img/icon/help.png</file>
     </qresource>
 </RCC>
