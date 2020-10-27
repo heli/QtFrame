@@ -7,7 +7,7 @@ A Basic Framework Of Qt. Include Frameless, Qss
 2. 左侧树形菜单
 3. 通过Qss重新定义了Qt控件的显示样式
 
-![image](https://www.miw-tech.com/image/show?path=images/qtframe/main.png)
+![image](https://www.miw-tech.com/image/show?path=images/qtframe/main1.png)
 
 ## About
 业务咨询：029-81025100 或 15398089175<br>
