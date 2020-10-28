@@ -173,21 +173,7 @@
           </property>
           <item row="0" column="0">
            <widget class="QStackedWidget" name="stackedWidget">
-            <widget class="QWidget" name="page">
-             <widget class="QLabel" name="label">
-              <property name="geometry">
-               <rect>
-                <x>60</x>
-                <y>90</y>
-                <width>68</width>
-                <height>15</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>Page1</string>
-              </property>
-             </widget>
-            </widget>
+            <widget class="FrmVideoPanel" name="page"/>
             <widget class="QWidget" name="page_2">
              <widget class="QLabel" name="label_2">
               <property name="geometry">
@@ -229,7 +215,16 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FrmVideoPanel</class>
+   <extends>QWidget</extends>
+   <header location="global">videos/frmvideopanel.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
+  <include location="../resource/resouce.qrc"/>
   <include location="../resource/resouce.qrc"/>
   <include location="../resource/resouce.qrc"/>
  </resources>

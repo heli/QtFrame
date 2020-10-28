@@ -45,13 +45,12 @@ FORMS += \
 
 RESOURCES += \
     resource/resouce.qrc \
-    resource/qss.qrc
-
-
+    resource/qss.qrc \
+    layouts/images.qrc
 
 RC_FILE += layouts/images/window.rc
 
-RESOURCES += layouts/images.qrc
+include(./modules/modules.pri)
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
