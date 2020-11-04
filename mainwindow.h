@@ -21,6 +21,7 @@ private slots:
     void timeUpdate();
     void showFrame_MultipleVideo();
     void showFrame_LocalVideo();
+    void showFrame_FaceFeatures();
     void showFrame_Settings();
 
 

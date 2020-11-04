@@ -36,7 +36,7 @@ void MainWindow::initControl()
     FramelessWidget *w = (FramelessWidget*)this->parent();
     connect(w, SIGNAL(showContralFrameNav1()), this, SLOT(showFrame_MultipleVideo()));
     connect(w, SIGNAL(showContralFrameNav2()), this, SLOT(showFrame_LocalVideo()));
-    connect(w, SIGNAL(showContralFrameNav3()), this, SLOT(showFrame_MultipleVideo()));
+    connect(w, SIGNAL(showContralFrameNav3()), this, SLOT(showFrame_FaceFeatures()));
     connect(w, SIGNAL(showContralFrameNav4()), this, SLOT(showFrame_MultipleVideo()));
     connect(w, SIGNAL(showContralFrameNav5()), this, SLOT(showFrame_Settings()));
 
@@ -62,6 +62,11 @@ void MainWindow::showFrame_MultipleVideo()
 void MainWindow::showFrame_LocalVideo()
 {
     ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::showFrame_FaceFeatures()
+{
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow::showFrame_Settings()

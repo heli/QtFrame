@@ -43,21 +43,7 @@
      <widget class="QStackedWidget" name="stackedWidget">
       <widget class="NavTreeLeftWidget" name="treePage"/>
       <widget class="NavbarLeftWidget" name="page"/>
-      <widget class="QWidget" name="mainPage2">
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>180</x>
-          <y>100</y>
-          <width>401</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Page2 Label</string>
-        </property>
-       </widget>
-      </widget>
+      <widget class="FrmFaceFeaturesPanel" name="mainPage2"/>
      </widget>
     </item>
    </layout>
@@ -94,6 +80,12 @@
    <class>NavTreeLeftWidget</class>
    <extends>QWidget</extends>
    <header location="global">layouts/navtreeleftwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FrmFaceFeaturesPanel</class>
+   <extends>QWidget</extends>
+   <header location="global">modules/faceid/frmfacefeaturespanel.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
