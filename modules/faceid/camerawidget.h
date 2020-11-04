@@ -2,6 +2,11 @@
 #define CAMERAWIDGET_H
 
 #include <QWidget>
+#include <QCamera>
+#include <QCameraViewfinder>
+#include <QCameraImageCapture>
+#include <QFileDialog>
+
 
 namespace Ui {
 class CameraWidget;
@@ -15,8 +20,17 @@ public:
     explicit CameraWidget(QWidget *parent = nullptr);
     ~CameraWidget();
 
+private slots:
+    void captureImage();
+    void displayImage(int, QImage);
+    void saveImage();
+
 private:
     Ui::CameraWidget *ui;
+
+    QCamera *camera;
+    QCameraViewfinder *viewfinder;
+    QCameraImageCapture *imageCapture;
 };
 
 #endif // CAMERAWIDGET_H
