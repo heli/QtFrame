@@ -770,5 +770,5 @@ QSplitter::handle:pressed {
     color: #e0e0e0;
 }
 #statusBar a {
-text-decoration: none
+    text-decoration: none
 }
