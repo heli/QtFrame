@@ -25,5 +25,10 @@
         <file>img/icon/systemconfiguration.png</file>
         <file>img/icon/network_drive_offline.png</file>
         <file>img/icon/help.png</file>
+        <file>img/icon/paly-play-48.png</file>
+        <file>img/icon/play_sound.png</file>
+        <file>img/icon/play_speaker.png</file>
+        <file>img/icon/play-fast-forward-48.png</file>
+        <file>img/icon/play-rewind-48.png</file>
     </qresource>
 </RCC>
