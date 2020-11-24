@@ -229,9 +229,9 @@ void VideoPlayer::resizeEvent(QResizeEvent *)
 
 void VideoPlayer::on_btnPlay_clicked()
 {
-    //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
+    mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
     //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8");
-    mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8");
+    //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8");
     //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8");
     QMediaPlayer::State status = m_pPlayer->state();
     if(status == QMediaPlayer::PlayingState || m_bPlaying)
