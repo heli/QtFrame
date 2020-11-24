@@ -16,6 +16,7 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
     qplte.setColor(QPalette::Window, QColor(0, 0, 0));
     m_pPlayerWidget->setPalette(qplte);
     m_pPlayer = new QMediaPlayer;
+    m_pPlayer->setVolume(mediaVolume);
     m_pPlayer->setVideoOutput(m_pPlayerWidget);
     ui->verticalLayout->addWidget(m_pPlayerWidget);
 
@@ -23,7 +24,7 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
     flowPanel = new QWidget(this);
     flowPanel->setObjectName("flowPanel");
     flowPanel->setVisible(false);
-    flowPanel->setGeometry(0, this->height() - 70, this->width() - 20, 100);
+    flowPanel->setGeometry(0, this->height() - 70, this->width() - 10, m_cFlowPanelHeight);
 
     //用布局顶住,左侧弹簧
     QHBoxLayout *layout = new QHBoxLayout;
@@ -34,22 +35,23 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
 
     // Volume
     m_pVolSlider = new QSlider();
+    m_pVolSlider->setMaximum(100);
+    m_pVolSlider->setValue(mediaVolume);
     connect(m_pVolSlider, SIGNAL(valueChanged(int)), this, SLOT(OnVolumeValueChanged(int)));
     connect(m_pVolSlider, SIGNAL(sliderReleased()), this, SLOT(OnVolumeSliderReleased()));
     flowPanel->layout()->addWidget(m_pVolSlider);
 
-    //播放
+    //播放.停止
     connect(ui->btnPlay, SIGNAL(clicked()), m_pPlayer, SLOT(play()));
-    //停止
-    //connect(ui->btnStop, SIGNAL(clicked()), m_pPlayer, SLOT(stop()));
-    //connect(m_pPlayer, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(OnStateChanged(QMediaPlayer::State)));
-    //ui->btnStop->setEnabled(false);
+
+    connect(m_pPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(OnSlider(qint64)));
+    connect(m_pPlayer, SIGNAL(durationChanged(qint64)), this, SLOT(OnDurationChanged(qint64)));
+    connect(m_pPlayer, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(stateChanged(QMediaPlayer::State)));
+    connect(m_pPlayer, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)),this, SLOT(mediaStatusChanged(QMediaPlayer::MediaStatus)));
 
     //设置滑块行为
     m_bReLoad = true;
     ui->slider->setEnabled(false);
-    connect(m_pPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(OnSlider(qint64)));
-    connect(m_pPlayer, SIGNAL(durationChanged(qint64)), this, SLOT(OnDurationChanged(qint64)));
     connect(ui->slider, SIGNAL(valueChanged(int)), this, SLOT(OnSliderValueChanged(int)));
 
     this->initMedia();
@@ -67,18 +69,109 @@ void VideoPlayer::initMedia()
     if(filename != NULL) {
         QString filepath = aFile + "/" + filename;
         qDebug() << filepath;
-        m_pPlayer->setMedia(QUrl::fromLocalFile(filepath));
-        m_bReLoad = true;
-        ui->slider->setValue(0);
+        mediaUrl = QUrl::fromLocalFile(filepath);
     }
+}
+
+void VideoPlayer::setMediaUrl(QString url)
+{
+    mediaUrl = QUrl(url);
 }
 
 void VideoPlayer::stopPlay()
 {
-    QMediaPlayer::State status = m_pPlayer->state();
-    if(status == QMediaPlayer::PlayingState)
-    {
-        m_pPlayer->stop();
+    m_bPlaying = false;
+    m_pPlayer->pause();
+    m_pPlayer->stop();
+
+    ui->btnPlay->setText("播放");
+    QIcon icon1;
+    icon1.addPixmap(QPixmap(":img/icon/paly-play-48.png"), QIcon::Normal);
+    ui->btnPlay->setIcon(icon1);
+}
+
+void VideoPlayer::startPlay()
+{
+    m_pPlayer->setMedia(mediaUrl);
+    m_bPlaying = true;
+    m_pPlayer->play();
+
+    ui->btnPlay->setText("暂停");
+    QIcon icon1;
+    icon1.addPixmap(QPixmap(":img/icon/play-pause-50.png"), QIcon::Normal);
+    ui->btnPlay->setIcon(icon1);
+}
+
+void VideoPlayer::mediaStatusChanged(QMediaPlayer::MediaStatus status)
+{
+    switch (status) {
+        case QMediaPlayer::UnknownMediaStatus:
+            qDebug() << tr("媒体未知状况！");
+            break;
+        case QMediaPlayer::NoMedia:
+            qDebug() << tr("没有媒体文件！");
+            break;
+        case QMediaPlayer::BufferingMedia:
+            qDebug() << tr("正在缓冲媒体文件！");
+            break;
+        case QMediaPlayer::BufferedMedia:
+            qDebug() << tr("媒体文件缓冲完成！");
+            ui->btnPlay->setEnabled(true);
+            break;
+        case QMediaPlayer::LoadingMedia:
+            qDebug() << tr("正在加载媒体！");
+            ui->btnPlay->setEnabled(false);
+            break;
+        case QMediaPlayer::StalledMedia:
+            qDebug() << tr("播放停滞！");
+            break;
+        case QMediaPlayer::EndOfMedia:
+            qDebug() << tr("播放结束！");
+            break;
+        case QMediaPlayer::LoadedMedia:
+            qDebug() << tr("媒体加载完成！");
+            break;
+        case QMediaPlayer::InvalidMedia:
+            qDebug() << tr("不可用的媒体文件！");
+            break;
+        default: break;
+    }
+}
+
+void VideoPlayer::stateChanged(QMediaPlayer::State state)
+{
+    switch (state) {
+        case QMediaPlayer::StoppedState:
+        {
+            qDebug() << tr("停止状态！");
+            m_bPlaying = false;
+            ui->btnPlay->setText("播放");
+            QIcon icon1;
+            icon1.addPixmap(QPixmap(":img/icon/paly-play-48.png"), QIcon::Normal);
+            ui->btnPlay->setIcon(icon1);
+            break;
+        }
+        case QMediaPlayer::PlayingState:
+        {
+            qDebug() << tr("播放状态！");
+            m_bPlaying = true;
+            ui->btnPlay->setText("暂停");
+            QIcon icon1;
+            icon1.addPixmap(QPixmap(":img/icon/play-pause-50.png"), QIcon::Normal);
+            ui->btnPlay->setIcon(icon1);
+            break;
+        }
+        case QMediaPlayer::PausedState:
+        {
+            qDebug() << tr("暂停状态！");
+            m_bPlaying = false;
+            ui->btnPlay->setText("播放");
+            QIcon icon1;
+            icon1.addPixmap(QPixmap(":img/icon/paly-play-48.png"), QIcon::Normal);
+            ui->btnPlay->setIcon(icon1);
+            break;
+        }
+        default: break;
     }
 }
 
@@ -100,22 +193,6 @@ void VideoPlayer::OnDurationChanged(qint64 i64Duration)
     }
 }
 
-void VideoPlayer::OnStateChanged(QMediaPlayer::State enumState)
-{
-    if (QMediaPlayer::StoppedState == enumState)
-    {
-        ui->btnPlay->setEnabled(true);
-        //ui->btnStop->setEnabled(false);
-        ui->slider->setEnabled(false);
-    }
-    else if (QMediaPlayer::PlayingState == enumState)
-    {
-        ui->btnPlay->setEnabled(false);
-        //ui->btnStop->setEnabled(true);
-        ui->slider->setEnabled(true);
-    }
-}
-
 void VideoPlayer::OnSliderValueChanged(int val)
 {
     m_pPlayer->setPosition(val);
@@ -123,7 +200,8 @@ void VideoPlayer::OnSliderValueChanged(int val)
 
 void VideoPlayer::OnVolumeValueChanged(int val)
 {
-
+    mediaVolume = val;
+    m_pPlayer->setVolume(mediaVolume);
 }
 
 void VideoPlayer::OnVolumeSliderReleased()
@@ -133,8 +211,7 @@ void VideoPlayer::OnVolumeSliderReleased()
 
 void VideoPlayer::on_btnVoice_clicked()
 {
-    int height = 100;
-    flowPanel->setGeometry(QRect(0, ui->btnVoice->y()-height , this->width() - 10, height));
+    flowPanel->setGeometry(QRect(0, ui->btnVoice->y()-m_cFlowPanelHeight , this->width() - 10, m_cFlowPanelHeight));
     if(flowPanel->isHidden()) {
         flowPanel->setVisible(true);
     } else {
@@ -146,6 +223,21 @@ void VideoPlayer::on_btnVoice_clicked()
 void VideoPlayer::resizeEvent(QResizeEvent *)
 {
     //重新设置顶部工具栏的位置和宽高,可以自行设置顶部显示或者底部显示
-    int height = 100;
-    flowPanel->setGeometry(QRect(0, ui->btnVoice->y()-height , this->width() - 10, height));
+    flowPanel->setGeometry(QRect(0, ui->btnVoice->y()-m_cFlowPanelHeight , this->width() - 10, m_cFlowPanelHeight));
+}
+
+void VideoPlayer::on_btnPlay_clicked()
+{
+
+    //m_pPlayer->setMedia(QUrl("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"));
+    //m_pPlayer->setMedia(QUrl("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"));
+    //m_pPlayer->setMedia(QUrl("http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8"));
+    mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
+    QMediaPlayer::State status = m_pPlayer->state();
+    if(status == QMediaPlayer::PlayingState || m_bPlaying)
+    {
+        stopPlay();
+    } else {
+        startPlay();
+    }
 }

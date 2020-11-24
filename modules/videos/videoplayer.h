@@ -18,10 +18,10 @@ class VideoPlayer : public QWidget
 public:
     explicit VideoPlayer(QWidget *parent = nullptr);
     ~VideoPlayer();
-    bool m_bReLoad;
     void initMedia();
-
+    void setMediaUrl(QString url);
     void stopPlay();
+    void startPlay();
 
 protected:
     void resizeEvent(QResizeEvent *);
@@ -30,13 +30,15 @@ public slots:
     void OnSetMediaFile(void);
     void OnSlider(qint64);
     void OnDurationChanged(qint64);
-    void OnStateChanged(QMediaPlayer::State);
     void OnSliderValueChanged(int);
     void OnVolumeValueChanged(int);
     void OnVolumeSliderReleased();
 
 private slots:
+    void stateChanged(QMediaPlayer::State state);
+    void mediaStatusChanged(QMediaPlayer::MediaStatus status);
     void on_btnVoice_clicked();
+    void on_btnPlay_clicked();
 
 private:
     Ui::VideoPlayer *ui;
@@ -44,6 +46,12 @@ private:
     QMediaPlayer    *m_pPlayer;
     QSlider *m_pVolSlider;
     QWidget *flowPanel;
+
+    QUrl mediaUrl;
+    int mediaVolume = 50;
+    int m_cFlowPanelHeight = 80;
+    bool m_bReLoad;
+    bool m_bPlaying;
 };
 
 #endif // VIDEOPLAYER_H

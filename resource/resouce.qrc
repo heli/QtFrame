@@ -34,5 +34,6 @@
         <file>img/icon/play-rewind.png</file>
         <file>img/icon/play-sound-speaker-50.png</file>
         <file>img/icon/play-speaker-50.png</file>
+        <file>img/icon/play-pause-50.png</file>
     </qresource>
 </RCC>
