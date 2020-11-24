@@ -28,7 +28,11 @@
         <file>img/icon/paly-play-48.png</file>
         <file>img/icon/play_sound.png</file>
         <file>img/icon/play_speaker.png</file>
-        <file>img/icon/play-fast-forward-48.png</file>
-        <file>img/icon/play-rewind-48.png</file>
+        <file>img/icon/play-fast-forward-50.png</file>
+        <file>img/icon/play-rewind-50.png</file>
+        <file>img/icon/play-fast-forward.png</file>
+        <file>img/icon/play-rewind.png</file>
+        <file>img/icon/play-sound-speaker-50.png</file>
+        <file>img/icon/play-speaker-50.png</file>
     </qresource>
 </RCC>

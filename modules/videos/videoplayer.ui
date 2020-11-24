@@ -58,8 +58,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>16</width>
-         <height>16</height>
+         <width>18</width>
+         <height>18</height>
         </size>
        </property>
       </widget>
@@ -71,12 +71,12 @@
        </property>
        <property name="icon">
         <iconset resource="../../resource/resouce.qrc">
-         <normaloff>:/img/icon/play-rewind-48.png</normaloff>:/img/icon/play-rewind-48.png</iconset>
+         <normaloff>:/img/icon/play-rewind.png</normaloff>:/img/icon/play-rewind.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>18</width>
+         <height>18</height>
         </size>
        </property>
       </widget>
@@ -91,12 +91,12 @@
        </property>
        <property name="icon">
         <iconset resource="../../resource/resouce.qrc">
-         <normaloff>:/img/icon/play-fast-forward-48.png</normaloff>:/img/icon/play-fast-forward-48.png</iconset>
+         <normaloff>:/img/icon/play-fast-forward.png</normaloff>:/img/icon/play-fast-forward.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>18</width>
+         <height>18</height>
         </size>
        </property>
       </widget>
@@ -115,12 +115,12 @@
        </property>
        <property name="icon">
         <iconset resource="../../resource/resouce.qrc">
-         <normaloff>:/img/icon/play_sound.png</normaloff>:/img/icon/play_sound.png</iconset>
+         <normaloff>:/img/icon/play-speaker-50.png</normaloff>:/img/icon/play-speaker-50.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>18</width>
+         <height>18</height>
         </size>
        </property>
       </widget>

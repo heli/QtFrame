@@ -9,15 +9,15 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    m_pPlayer = new QMediaPlayer;
+    // Player Widget
     m_pPlayerWidget = new QVideoWidget;
-    m_pPlayer->setVideoOutput(m_pPlayerWidget);
-    ui->verticalLayout->addWidget(m_pPlayerWidget);
-
     m_pPlayerWidget->setAutoFillBackground(true);
     QPalette qplte;
     qplte.setColor(QPalette::Window, QColor(0, 0, 0));
     m_pPlayerWidget->setPalette(qplte);
+    m_pPlayer = new QMediaPlayer;
+    m_pPlayer->setVideoOutput(m_pPlayerWidget);
+    ui->verticalLayout->addWidget(m_pPlayerWidget);
 
     // Flow Panel
     flowPanel = new QWidget(this);
@@ -32,6 +32,7 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
     layout->addStretch();
     flowPanel->setLayout(layout);
 
+    // Volume
     m_pVolSlider = new QSlider();
     connect(m_pVolSlider, SIGNAL(valueChanged(int)), this, SLOT(OnVolumeValueChanged(int)));
     connect(m_pVolSlider, SIGNAL(sliderReleased()), this, SLOT(OnVolumeSliderReleased()));
