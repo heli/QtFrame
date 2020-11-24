@@ -144,6 +144,7 @@ void VideoPlayer::stateChanged(QMediaPlayer::State state)
         case QMediaPlayer::StoppedState:
         {
             qDebug() << tr("停止状态！");
+            ui->btnPlay->setEnabled(true);
             m_bPlaying = false;
             ui->btnPlay->setText("播放");
             QIcon icon1;
@@ -228,11 +229,10 @@ void VideoPlayer::resizeEvent(QResizeEvent *)
 
 void VideoPlayer::on_btnPlay_clicked()
 {
-
-    //m_pPlayer->setMedia(QUrl("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"));
-    //m_pPlayer->setMedia(QUrl("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"));
-    //m_pPlayer->setMedia(QUrl("http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8"));
-    mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
+    //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
+    //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8");
+    mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8");
+    //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8");
     QMediaPlayer::State status = m_pPlayer->state();
     if(status == QMediaPlayer::PlayingState || m_bPlaying)
     {
