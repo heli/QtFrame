@@ -48,7 +48,7 @@ private:
     QWidget *flowPanel;
 
     QUrl mediaUrl;
-    int mediaVolume = 0;
+    int mediaVolume = 50;
     int m_cFlowPanelHeight = 80;
     bool m_bReLoad;
     bool m_bPlaying;
