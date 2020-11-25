@@ -725,8 +725,8 @@ color:#C0DCF2;
 #leftNavWidget QToolButton{
         color: 0xffffff;
         background-color: none;
-    border:none;
-    padding: 1px 1px 1px 1px;
+        border:none;
+        padding: 1px 1px 1px 1px;
 }
 #leftNavWidget QToolButton:checked{
         color: #3096f8;

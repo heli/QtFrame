@@ -132,6 +132,7 @@
  <resources>
   <include location="../../resource/resouce.qrc"/>
   <include location="../../resource/resouce.qrc"/>
+  <include location="../../resource/resouce.qrc"/>
  </resources>
  <connections/>
 </ui>

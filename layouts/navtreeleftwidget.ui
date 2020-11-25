@@ -55,17 +55,29 @@
         <widget class="QWidget" name="leftNavWidget" native="true">
          <property name="minimumSize">
           <size>
-           <width>120</width>
+           <width>150</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>300</width>
+           <width>240</width>
            <height>16777215</height>
           </size>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>10</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>10</number>
+          </property>
           <property name="horizontalSpacing">
            <number>1</number>
           </property>
@@ -117,16 +129,16 @@
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout">
              <property name="leftMargin">
-              <number>3</number>
+              <number>5</number>
              </property>
              <property name="topMargin">
-              <number>1</number>
+              <number>5</number>
              </property>
              <property name="rightMargin">
               <number>0</number>
              </property>
              <property name="bottomMargin">
-              <number>1</number>
+              <number>5</number>
              </property>
              <item>
               <widget class="QToolButton" name="navTreeRefresh">
@@ -139,14 +151,19 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>20</width>
+                 <height>20</height>
                 </size>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="navTreeTitle">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>树形菜单</string>
                </property>
@@ -216,6 +233,7 @@
   </customwidget>
  </customwidgets>
  <resources>
+  <include location="../resource/resouce.qrc"/>
   <include location="../resource/resouce.qrc"/>
   <include location="../resource/resouce.qrc"/>
  </resources>

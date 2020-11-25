@@ -86,7 +86,7 @@ void VideoPlayer::stopPlay()
 
     ui->btnPlay->setText("播放");
     QIcon icon1;
-    icon1.addPixmap(QPixmap(":img/icon/paly-play-48.png"), QIcon::Normal);
+    icon1.addPixmap(QPixmap(":img/icon/play-play-48.png"), QIcon::Normal);
     ui->btnPlay->setIcon(icon1);
 }
 
@@ -148,7 +148,7 @@ void VideoPlayer::stateChanged(QMediaPlayer::State state)
             m_bPlaying = false;
             ui->btnPlay->setText("播放");
             QIcon icon1;
-            icon1.addPixmap(QPixmap(":img/icon/paly-play-48.png"), QIcon::Normal);
+            icon1.addPixmap(QPixmap(":img/icon/play-play-48.png"), QIcon::Normal);
             ui->btnPlay->setIcon(icon1);
             break;
         }
@@ -168,7 +168,7 @@ void VideoPlayer::stateChanged(QMediaPlayer::State state)
             m_bPlaying = false;
             ui->btnPlay->setText("播放");
             QIcon icon1;
-            icon1.addPixmap(QPixmap(":img/icon/paly-play-48.png"), QIcon::Normal);
+            icon1.addPixmap(QPixmap(":img/icon/play-play-48.png"), QIcon::Normal);
             ui->btnPlay->setIcon(icon1);
             break;
         }
@@ -240,8 +240,8 @@ void VideoPlayer::resizeEvent(QResizeEvent *)
 void VideoPlayer::on_btnPlay_clicked()
 {
     //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
-    //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8");
-    mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8");
+    mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8");
+    //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8");
     //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8");
     QMediaPlayer::State status = m_pPlayer->state();
     if(status == QMediaPlayer::PlayingState || m_bPlaying)

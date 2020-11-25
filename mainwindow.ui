@@ -42,8 +42,9 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <widget class="NavTreeLeftWidget" name="treePage"/>
-      <widget class="NavbarLeftWidget" name="page"/>
-      <widget class="FrmFaceFeaturesPanel" name="mainPage2"/>
+      <widget class="FrmLiveVideoWidget" name="liveVideoPage"/>
+      <widget class="NavbarLeftWidget" name="navbarPage"/>
+      <widget class="FrmFaceFeaturesPanel" name="facePage"/>
      </widget>
     </item>
    </layout>
@@ -86,6 +87,12 @@
    <class>FrmFaceFeaturesPanel</class>
    <extends>QWidget</extends>
    <header location="global">modules/faceid/frmfacefeaturespanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FrmLiveVideoWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">layouts/frmlivevideowidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
