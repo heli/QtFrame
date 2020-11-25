@@ -54,7 +54,7 @@
        </property>
        <property name="icon">
         <iconset resource="../../resource/resouce.qrc">
-         <normaloff>:/img/icon/paly-play-48.png</normaloff>:/img/icon/paly-play-48.png</iconset>
+         <normaloff>:/img/icon/play-play-48.png</normaloff>:/img/icon/play-play-48.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -115,7 +115,7 @@
        </property>
        <property name="icon">
         <iconset resource="../../resource/resouce.qrc">
-         <normaloff>:/img/icon/play-speaker-50.png</normaloff>:/img/icon/play-speaker-50.png</iconset>
+         <normaloff>:/img/icon/play-voice-50.png</normaloff>:/img/icon/play-voice-50.png</iconset>
        </property>
        <property name="iconSize">
         <size>

@@ -203,6 +203,16 @@ void VideoPlayer::OnVolumeValueChanged(int val)
 {
     mediaVolume = val;
     m_pPlayer->setVolume(mediaVolume);
+
+    QIcon icon1;
+    if(val == 0) {
+        icon1.addPixmap(QPixmap(":img/icon/play-sound-speaker-50.png"), QIcon::Normal);
+    } else if(val < 80) {
+        icon1.addPixmap(QPixmap(":img/icon/play-voice-50.png"), QIcon::Normal);
+    } else {
+        icon1.addPixmap(QPixmap(":img/icon/play-speaker-50.png"), QIcon::Normal);
+    }
+    ui->btnVoice->setIcon(icon1);
 }
 
 void VideoPlayer::OnVolumeSliderReleased()
@@ -229,9 +239,9 @@ void VideoPlayer::resizeEvent(QResizeEvent *)
 
 void VideoPlayer::on_btnPlay_clicked()
 {
-    mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
+    //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
     //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8");
-    //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8");
+    mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8");
     //mediaUrl = QUrl("http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8");
     QMediaPlayer::State status = m_pPlayer->state();
     if(status == QMediaPlayer::PlayingState || m_bPlaying)
