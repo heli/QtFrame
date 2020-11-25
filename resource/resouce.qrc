@@ -31,10 +31,10 @@
         <file>img/icon/play-rewind-50.png</file>
         <file>img/icon/play-fast-forward.png</file>
         <file>img/icon/play-rewind.png</file>
-        <file>img/icon/play-sound-speaker-50.png</file>
-        <file>img/icon/play-speaker-50.png</file>
+        <file>img/icon/play-sound-speaker0.png</file>
+        <file>img/icon/play-sound-speaker100.png</file>
         <file>img/icon/play-pause-50.png</file>
         <file>img/icon/play-play-48.png</file>
-        <file>img/icon/play-voice-50.png</file>
+        <file>img/icon/play-sound-speaker.png</file>
     </qresource>
 </RCC>

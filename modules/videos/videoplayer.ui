@@ -115,7 +115,7 @@
        </property>
        <property name="icon">
         <iconset resource="../../resource/resouce.qrc">
-         <normaloff>:/img/icon/play-voice-50.png</normaloff>:/img/icon/play-voice-50.png</iconset>
+         <normaloff>:/img/icon/play-sound-speaker.png</normaloff>:/img/icon/play-sound-speaker.png</iconset>
        </property>
        <property name="iconSize">
         <size>

@@ -206,11 +206,11 @@ void VideoPlayer::OnVolumeValueChanged(int val)
 
     QIcon icon1;
     if(val == 0) {
-        icon1.addPixmap(QPixmap(":img/icon/play-sound-speaker-50.png"), QIcon::Normal);
+        icon1.addPixmap(QPixmap(":img/icon/play-sound-speaker0.png"), QIcon::Normal);
     } else if(val < 80) {
-        icon1.addPixmap(QPixmap(":img/icon/play-voice-50.png"), QIcon::Normal);
+        icon1.addPixmap(QPixmap(":img/icon/play-sound-speaker.png"), QIcon::Normal);
     } else {
-        icon1.addPixmap(QPixmap(":img/icon/play-speaker-50.png"), QIcon::Normal);
+        icon1.addPixmap(QPixmap(":img/icon/play-sound-speaker100.png"), QIcon::Normal);
     }
     ui->btnVoice->setIcon(icon1);
 }
