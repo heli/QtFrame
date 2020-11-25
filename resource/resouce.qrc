@@ -36,5 +36,6 @@
         <file>img/icon/play-pause-50.png</file>
         <file>img/icon/play-play-48.png</file>
         <file>img/icon/play-sound-speaker.png</file>
+        <file>conf/channels.json</file>
     </qresource>
 </RCC>
