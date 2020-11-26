@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    layouts/frmlivevideowidget.cpp \
         main.cpp \
         mainwindow.cpp \
     layouts/framelesswidget.cpp \
@@ -32,12 +33,14 @@ SOURCES += \
     layouts/navtreeleftwidget.cpp
 
 HEADERS += \
+    layouts/frmlivevideowidget.h \
         mainwindow.h \
     layouts/framelesswidget.h \
     layouts/navbarleftwidget.h \
     layouts/navtreeleftwidget.h
 
 FORMS += \
+    layouts/frmlivevideowidget.ui \
         mainwindow.ui \
     layouts/framelesswidget.ui \
     layouts/navbarleftwidget.ui \
@@ -51,8 +54,11 @@ RESOURCES += \
 RC_FILE += layouts/images/window.rc
 
 include(./modules/modules.pri)
+include(./common/common.pri)
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
