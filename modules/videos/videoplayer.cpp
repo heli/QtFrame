@@ -81,7 +81,7 @@ void VideoPlayer::setMediaUrl(QString url)
 void VideoPlayer::stopPlay()
 {
     m_bPlaying = false;
-    m_pPlayer->pause();
+    //m_pPlayer->pause();
     m_pPlayer->stop();
 
     ui->btnPlay->setText("播放");
@@ -95,6 +95,8 @@ void VideoPlayer::startPlay()
     m_pPlayer->setMedia(mediaUrl);
     m_bPlaying = true;
     m_pPlayer->play();
+
+    qDebug() << mediaUrl;
 
     ui->btnPlay->setText("暂停");
     QIcon icon1;
